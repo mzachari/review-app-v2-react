@@ -25,7 +25,7 @@ function ProductDetail(props) {
       <div>{props.product.title}</div>
       <div className={classes.productSubTitle}>
         <div>{avgRating}</div>
-        <button className={classes.addReviewBtn}>Add Review</button>
+        <button className="btn btn-primary">Add Review</button>
       </div>
       <hr />
       <ReviewList reviews={props.product.reviews || []} />

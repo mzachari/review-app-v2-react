@@ -1,9 +1,11 @@
 import Card from "../ui/Card";
 import classes from "./ProductListItem.module.css";
-
+import { useHistory } from "react-router";
 function ProductListItem(props) {
+  const history = useHistory();
+
   function onProductSelected() {
-    console.log("Button Clicked");
+    history.push(`/product/${props.productId}`);
   }
   return (
     <li className={classes.item}>

@@ -8,6 +8,7 @@ function ProductList(props) {
         <ProductListItem
           key={product.productId}
           title={product.title}
+          productId={product.productId}
           id={product.productId}
         />
       ))}
