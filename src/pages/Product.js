@@ -27,28 +27,34 @@ function ProductPage() {
         return response.json();
       })
       .then((responseData) => {
-        setIsLoading(false);
         setLoadedProduct(responseData.data);
+        setIsLoading(false);
       });
   }, [productId]);
 
   if (isLoading) {
     return (
       <section>
-        <button className="btn btn-secondary mb-4" onClick={showProductList}>Show Product List</button>
+        <button className="btn btn-secondary mb-4" onClick={showProductList}>
+          Show Product List
+        </button>
 
         <p>Loading...</p>
       </section>
     );
-  }
+  } else {
+    console.log("Product Loaded", loadedProduct);
 
-  return (
-    <section>
-      <button className="btn btn-secondary mb-4" onClick={showProductList}>Show Product List</button>
-      <ProductDetail product={loadedProduct} />
-      {/* <NewReviewForm /> */}
-    </section>
-  );
+    return (
+      <section>
+        <button className="btn btn-secondary mb-4" onClick={showProductList}>
+          Show Product List
+        </button>
+        <ProductDetail product={loadedProduct} />
+        {/* <NewReviewForm /> */}
+      </section>
+    );
+  }
 }
 
 export default ProductPage;

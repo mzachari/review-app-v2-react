@@ -1,3 +1,4 @@
+import ProductRatingStars from "../products/ProductRatingStars";
 import classes from "./ReviewList.module.css";
 
 function ReviewList(props) {
@@ -5,10 +6,11 @@ function ReviewList(props) {
     <section>
       <h4>Reviews</h4>
       {props.reviews.map((review) => (
-        <p key={review.reviewId}>
-          <span className={classes.rating}>{review.rating}</span>
+        <div className="d-flex align-items-center" key={review.reviewId}>
+          <ProductRatingStars avgRating={review.rating} />
+          <span className={classes.rating + " ml-3"}>{review.rating}</span>
           {review.reviewText}
-        </p>
+        </div>
       ))}
     </section>
   );
