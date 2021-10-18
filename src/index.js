@@ -2,16 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { WebSocketContextProvider } from "./store/websocket-context";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <WebSocketContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </WebSocketContextProvider>,
   document.getElementById("root")
 );
 

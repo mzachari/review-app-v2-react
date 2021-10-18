@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import ProductDetail from "../components/products/ProductDetail";
 
 function ProductPage() {
-
   const { productId } = useParams();
   const history = useHistory();
 
@@ -18,6 +17,10 @@ function ProductPage() {
   useEffect(() => {
     setIsLoading(true);
 
+    fetchProductDetails(productId);
+  }, [productId]);
+
+  const fetchProductDetails = (productId) => {
     fetch(
       "https://1ull7204d9.execute-api.ap-south-1.amazonaws.com/dev/products/" +
         productId +
@@ -30,7 +33,7 @@ function ProductPage() {
         setLoadedProduct(responseData.data);
         setIsLoading(false);
       });
-  }, [productId]);
+  };
 
   if (isLoading) {
     return (
@@ -49,7 +52,6 @@ function ProductPage() {
           Show Product List
         </button>
         <ProductDetail product={loadedProduct} />
-
       </section>
     );
   }

@@ -12,10 +12,6 @@ function NewReviewForm(props) {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log({
-      rating: newRatingValue,
-      reviewText: reviewTextRef.current.value,
-    });
     const newReview = {
       rating: newRatingValue,
       reviewText: reviewTextRef.current.value,
@@ -35,8 +31,7 @@ function NewReviewForm(props) {
         return response.json();
       })
       .then((responseData) => {
-        console.log(responseData);
-        props.onSubmit();
+        props.onSubmit(responseData.data);
       });
   };
 
