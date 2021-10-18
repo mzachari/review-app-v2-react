@@ -1,10 +1,6 @@
 import ReactStars from "react-rating-stars-component";
 
 function ProductRatingStars(props) {
-    console.log(props);
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
   return (
     <ReactStars
       edit={false}

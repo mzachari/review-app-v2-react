@@ -2,9 +2,9 @@ import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import ProductDetail from "../components/products/ProductDetail";
-import NewReviewForm from "../components/reviews/NewReviewForm";
 
 function ProductPage() {
+
   const { productId } = useParams();
   const history = useHistory();
 
@@ -43,15 +43,13 @@ function ProductPage() {
       </section>
     );
   } else {
-    console.log("Product Loaded", loadedProduct);
-
     return (
       <section>
         <button className="btn btn-secondary mb-4" onClick={showProductList}>
           Show Product List
         </button>
         <ProductDetail product={loadedProduct} />
-        {/* <NewReviewForm /> */}
+
       </section>
     );
   }
