@@ -35,7 +35,7 @@ function ProductDetail(props) {
 
   return (
     <section>
-      <div>{product.title}</div>
+      <h2>{product.title}</h2>
       <div className={classes.productSubTitle}>
         <ProductRating reviews={product.reviews} />
         <button className="btn btn-primary" onClick={onAddReviewBtnClick}>

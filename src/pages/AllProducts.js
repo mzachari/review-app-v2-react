@@ -30,7 +30,7 @@ function AllProductsPage() {
 
   return (
     <section>
-      <h1>All Products</h1>
+      <h2>All Products</h2>
       <ProductList products={loadedProducts}></ProductList>
     </section>
   );

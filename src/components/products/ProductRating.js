@@ -28,7 +28,7 @@ function ProductRating(props) {
     <section>
       <div className="d-flex align-items-center">
         {isRatingComputed && <ProductRatingStars avgRating={avgRating} />}
-        <div className="ml-3">{avgRating}</div>
+        {avgRating > 0 && <div className="ml-3">{avgRating}</div>}
       </div>
     </section>
   );

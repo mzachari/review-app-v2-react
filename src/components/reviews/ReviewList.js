@@ -18,6 +18,7 @@ function ReviewList(props) {
           {review.reviewText}
         </div>
       ))}
+      {reviews.length === 0 && <p>No reviews yet!</p>}
     </section>
   );
 }
