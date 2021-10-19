@@ -36,7 +36,7 @@ function NewReviewForm(props) {
   };
 
   return (
-    <form className={classes.form} onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit}>
       <div className={classes.control}>
         <h4>Rating</h4>
         <ReactStars
@@ -49,6 +49,7 @@ function NewReviewForm(props) {
       <div className={classes.control}>
         <h4>Review</h4>
         <textarea
+          placeholder="Start typing..."
           id="description"
           required
           rows="5"

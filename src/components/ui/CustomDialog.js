@@ -12,7 +12,7 @@ function CustomDialog(props) {
 
   return (
     <div>
-      <Dialog  className="p-3" open={open} onClose={handleClose}>
+      <Dialog fullWidth maxWidth="sm" open={open} onClose={handleClose}>
         <h2 className="p-4">{props.title}</h2>
         <DialogContent>{props.children}</DialogContent>
       </Dialog>
