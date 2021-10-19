@@ -1,7 +1,6 @@
 import { createContext, useEffect } from "react";
-import { w3cwebsocket as W3CWebSocket } from "websocket";
 
-const client = new W3CWebSocket(
+const client = new WebSocket(
   "wss://kv4s7e5pj3.execute-api.ap-south-1.amazonaws.com/dev"
 );
 
