@@ -16,7 +16,7 @@ function ProductDetail(props) {
     websocketCtx.client.onmessage = (message) => {
       const newReview = JSON.parse(message.data);
       if (newReview.productId === product.productId) {
-        product.reviews = product.reviews.concat([newReview]);
+        product.reviews = [newReview].concat(product.reviews);
         setProduct(JSON.parse(JSON.stringify(product)));
       }
     };

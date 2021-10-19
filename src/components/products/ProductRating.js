@@ -27,8 +27,8 @@ function ProductRating(props) {
   return (
     <section>
       <div className="d-flex align-items-center">
+        {avgRating > 0 && <h3 className="mb-0 mr-3">{avgRating}</h3>}
         {isRatingComputed && <ProductRatingStars avgRating={avgRating} />}
-        {avgRating > 0 && <div className="ml-3">{avgRating}</div>}
       </div>
     </section>
   );

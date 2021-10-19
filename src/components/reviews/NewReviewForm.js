@@ -12,6 +12,12 @@ function NewReviewForm(props) {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    if (
+      newRatingValue === 0 ||
+      reviewTextRef.current.value.trim().length === 0
+    ) {
+      return;
+    }
     const newReview = {
       rating: newRatingValue,
       reviewText: reviewTextRef.current.value,
@@ -47,7 +53,7 @@ function NewReviewForm(props) {
         />
       </div>
       <div className={classes.control}>
-        <h4>Review</h4>
+        <h4 className="mb-4">Review</h4>
         <textarea
           placeholder="Start typing..."
           id="description"
@@ -56,7 +62,7 @@ function NewReviewForm(props) {
           ref={reviewTextRef}
         ></textarea>
       </div>
-      <button className="btn btn-success">Submit</button>
+      <button className="btn btn-success my-3">Submit</button>
     </form>
   );
 }

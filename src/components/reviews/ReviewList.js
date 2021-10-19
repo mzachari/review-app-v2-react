@@ -15,8 +15,8 @@ function ReviewList(props) {
         {reviews.map((review) => (
           <li className="d-flex align-items-center" key={review.reviewId}>
             <ProductRatingStars avgRating={review.rating} />
-            <span className={classes.rating + " ml-3"}>{review.rating}</span>
-            {review.reviewText}
+            <h5 className="mx-3 mb-0">{review.rating}</h5>
+            <h5 className="mb-0">{review.reviewText}</h5>
           </li>
         ))}
       </ul>
